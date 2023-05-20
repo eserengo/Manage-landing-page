@@ -1,0 +1,208 @@
+/*
+ Name: Manage landing page.
+ Description: A Frontendmentor.io coding challenge.
+ Author: Federico Borzani
+ Author URL:  https://github.com/eserengo/
+*/
+
+@import "variables.css";
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0%;
+  margin: 0%;
+  user-select: none;
+  font-family: "Be Vietnam Pro";
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+/* ### ADD HERE */
+
+.blur {
+  filter: blur(2px);
+}
+
+.link,
+.icon,
+.dot,
+.fa {
+  cursor: pointer;
+}
+
+.primary.para,
+.attribution > span > a {
+  font-size: 90%;
+}
+
+.btn,
+.secondary.para,
+.strong,
+.badge,
+.input::placeholder,
+.message,
+.copyright,
+.attribution > span {
+  font-size: 70%;
+}
+
+.home {
+  background-color: var(--VeryLightGray);
+}
+
+.modal-body {
+  width: 90%;
+  margin: 0% 5%;
+  background-color: var(--White);
+}
+
+.link {
+  text-decoration: none;
+  font-weight: var(--FontBold);
+  color: var(--DarkGrayishBlue);
+}
+
+.link:hover {
+  color: var(--DarkBlue);
+  border-bottom: 2px solid var(--DarkBlue);
+}
+
+.btn {
+  border: 1px solid var(--BrightRed);
+  background-color: var(--White);
+  color: var(--BrightRed);
+}
+
+.btn:hover {
+  border: 1px solid var(--BrightRed);
+  background-color: var(--BrightRed);
+  color: var(--White);
+  box-shadow: 0px 2px 8px var(--BrightRed);
+}
+
+.title {
+  font-weight: 700;
+}
+
+.title,
+.strong,
+.fa,
+.input {
+  color: var(--DarkBlue);
+}
+
+.para {
+  color: var(--DarkGrayishBlue);
+}
+
+.badge {
+  background-color: var(--BrightRed);
+  color: var(--VeryLightGray);
+  font-weight: 400;
+}
+
+.badge:first-of-type {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.avatar {
+  width: 32px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--BrightRed);
+  border-radius: 50%;
+}
+
+.dot:hover:not(.dot.active:hover) {
+  transform: scale(1.25);
+}
+
+.dot.active {
+  border: 1px solid var(--BrightRed);
+  background-color: var(--BrightRed);
+}
+
+.fa {
+  font-size: 24px !important;
+  color: var(--DarkGrayishBlue);
+}
+
+.fa:hover {
+  color: var(--DarkBlue);
+}
+
+.footing {
+  background-color: var(--BrightRed);
+}
+
+.footing .title {
+  color: var(--VeryLightGray);
+}
+
+.footing .btn:hover {
+  border: 1px solid var(--White);
+  background-color: var(--BrightRed);
+  color: var(--White);
+  box-shadow: 0px 2px 8px var(--White);
+}
+
+.footer {
+  background-color: var(--VeryDarkBlue);
+  color: var(--VeryLightGray);
+}
+
+.footer .link {
+  color: var(--VeryLightGray) !important;
+}
+
+.footer .link:hover {
+  color: var(--BrightRed) !important;
+  border-bottom: 2px solid var(--BrightRed);
+}
+
+.footer .icon:hover {
+  filter: invert(60%) sepia(100%) saturate(600%) hue-rotate(330deg) brightness(90%) contrast(100%);
+}
+
+.input {
+  outline: none;
+  border: 1px solid var(--White);
+  /* margin-top: 4px !important; */
+}
+
+.input::placeholder {
+  color: var(--DarkGrayishBlue);
+  padding-left: 8px;
+}
+
+.success {
+  color: var(--BrightGreen);
+}
+
+.validated {
+  border: 2px solid var(--BrightGreen) !important;
+}
+
+.error {
+  color: var(--BrightRed);
+}
+
+.not__validated {
+  border: 2px solid var(--BrightRed) !important;
+}
+
+/* ### TO HERE */
