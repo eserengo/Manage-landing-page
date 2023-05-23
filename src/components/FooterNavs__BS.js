@@ -23,7 +23,7 @@ const FooterNavs = () => {
   ];
   
   const Logo = () => (
-    <ReactBootstrap.Navbar.Brand className='order-3 order-sm-0 text-center'><ReactBootstrap.Image className='logo' alt='logo' src='./src/images/footer-logo.svg' /></ReactBootstrap.Navbar.Brand>
+    <ReactBootstrap.Navbar.Brand className='order-3 order-sm-0 text-center my-3'><ReactBootstrap.Image className='logo' alt='logo' src='./src/images/footer-logo.svg' /></ReactBootstrap.Navbar.Brand>
   );
 
   const Input = () => {
@@ -32,20 +32,25 @@ const FooterNavs = () => {
     const emailRegEx = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
     const handleSubmit = (event) => {
-      event.preventDefault();
-      if (emailRef.current.value.match(emailRegEx)) {
+
+      const validated = () => {
         setIsValidated(true);
-        emailRef.current.classList.contains('not__validated') ? emailRef.current.classList.remove('not__validated') : null;
+        emailRef.current.classList.contains('not__validated') && emailRef.current.classList.remove('not__validated');
         emailRef.current.classList.add('validated');
-      } else {
+      }
+
+      const notValidated = () => {
         setIsValidated(false);
-        emailRef.current.classList.contains('validated') ? emailRef.current.classList.remove('validated') : null;
+        emailRef.current.classList.contains('validated') && emailRef.current.classList.remove('validated');
         emailRef.current.classList.add('not__validated');
       }
+
+      event.preventDefault();
+      emailRef.current.value.match(emailRegEx) ? validated() : notValidated();
     };
 
     return (
-      <ReactBootstrap.Nav.Item className='order-0 order-sm-2'>
+      <ReactBootstrap.Nav.Item className='order-0 order-sm-2 mb-4 my-sm-2'>
         <input ref={emailRef} type='email' className='input rounded-pill p-1 me-2' placeholder='Updates in your inbox...' autoComplete='off' />
         <ReactBootstrap.Button type='submit' className='rounded-pill px-3 py-2' onClick={(event) => handleSubmit(event)}>Go</ReactBootstrap.Button>
         {isValidated && <em className='message success d-block ms-1 mt-1'>Accepted</em>}
@@ -55,10 +60,10 @@ const FooterNavs = () => {
   };
 
   return (
-    <footer className='footer'>
-      <ReactBootstrap.Nav className='d-flex flex-column flex-sm-row align-items-center align-items-sm-start justify-content-sm-evenly position-relative'>
+    <footer className='footer px-2 py-4 px-sm-5'>
+      <ReactBootstrap.Nav className='d-flex flex-column flex-sm-row align-items-center align-items-sm-start justify-content-sm-between'>
         <Logo />
-        <ReactBootstrap.Nav.Item as='ul' className='order-2 d-flex justify-content-evenly mt-2 p-0'>
+        <ReactBootstrap.Nav.Item as='ul' className='order-2 order-sm-3 d-flex justify-content-evenly mt-2 p-0 start-0 bottom-0'>
           <List target={social} hash='social' BS__options='p-2' />
         </ReactBootstrap.Nav.Item>
         <Input />

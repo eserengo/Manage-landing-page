@@ -27,10 +27,10 @@ ul, li {
   list-style-type: none;
 }
 
-/* ### ADD HERE */
-
 .blur {
-  filter: blur(2px);
+  opacity: 25%;
+  background-color: var(--Opacity);
+  backdrop-filter: blur(15px);
 }
 
 .link,
@@ -60,9 +60,17 @@ ul, li {
   background-color: var(--VeryLightGray);
 }
 
+.main,
+.footer {
+  z-index: 0;
+}
+
+.modal-dialog,
+.modal-content {
+  background-color: transparent;
+}
+
 .modal-body {
-  width: 90%;
-  margin: 0% 5%;
   background-color: var(--White);
 }
 
@@ -109,6 +117,7 @@ ul, li {
   background-color: var(--BrightRed);
   color: var(--VeryLightGray);
   font-weight: 400;
+  margin-right: 8px;
 }
 
 .badge:first-of-type {
@@ -181,7 +190,6 @@ ul, li {
 .input {
   outline: none;
   border: 1px solid var(--White);
-  /* margin-top: 4px !important; */
 }
 
 .input::placeholder {
@@ -204,5 +212,3 @@ ul, li {
 .not__validated {
   border: 2px solid var(--BrightRed) !important;
 }
-
-/* ### TO HERE */

@@ -1,3 +1,21 @@
 body {
   min-width: 800px;
 }
+
+.home {
+  background-image: url("../images/bg-tablet-pattern.svg"), url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: 500px -150px, -250px 700px;
+  background-size: 55% 35%, 50% 25%;
+}
+
+.footing {
+  background-image: url("../images/bg-simplify-section-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: 120px -80px;
+  background-size: 100% 150%;
+}
+
+.footer .btn {
+  margin-top: -4px;
+}

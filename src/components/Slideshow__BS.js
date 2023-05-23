@@ -3,8 +3,8 @@ const Slideshow = () => {
 
   React.useEffect(() => {
     document.querySelectorAll('.dot').forEach(item => {
-      if (item.classList.contains('active')) item.classList.remove('active');
-      if (item.id == slide) item.classList.add('active');
+      item.classList.contains('active') && item.classList.remove('active');
+      item.id == slide && item.classList.add('active');
     })
   }, );
 
@@ -39,20 +39,18 @@ const Slideshow = () => {
     const Testimony = (props) => {
       return (
         <div className={`testimony ${props.BS__options}`}>
-          <ReactBootstrap.Image className='avatar' alt='avatar' src={props.target.src} />
+          <ReactBootstrap.Image className='avatar my-2' alt='avatar' src={props.target.src} />
           <br />
           <strong className='strong'>{props.target.name}</strong>
-          <p className='secondary para'>{props.target.content}</p>
+          <p className='secondary para mx-5 my-2'>{props.target.content}</p>
         </div>)
     };
 
     return (
       users.map(item => {
-        if (item.id == slide) {
-          return (
-            <Testimony key={`testimony__${item.id}`} target={item} BS__options='text-center' />
-          )
-        }
+        return (
+          (item.id == slide) && <Testimony key={`testimony__${item.id}`} target={item} BS__options='text-center' />
+        )
       })
     )
   };
@@ -61,7 +59,7 @@ const Slideshow = () => {
     <div className='d-flex flex-row justify-content-center align-items-center'>
       {users.map(item => {
         return (
-          <span key={`dot__${item.id}`} className='dot mx-1' id={item.id} onClick={() => setSlide(item.id)}></span>
+          <span key={`dot__${item.id}`} className='dot mx-1 my-4' id={item.id} onClick={() => setSlide(item.id)}></span>
         )
       })}
     </div>

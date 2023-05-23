@@ -15,7 +15,7 @@ const Route = ({ path, children }) => {
     };
   }, [])
 
-  return currentPath === path ? children : null;
+  return (currentPath === path) && children;
 }
 
 export default Route;
